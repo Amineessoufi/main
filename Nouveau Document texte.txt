@@ -1,0 +1,7 @@
+fichier om ' fullstack' ta3mel gitbash here -- yet7al cmd mta3ah ( consol)
+- git add .
+- git commit -m "exemple"
+- git push origin main
+
+bech tejbed haja taamel just 
+- git pull wala // git pull origin main
