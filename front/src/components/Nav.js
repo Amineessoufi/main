@@ -1,10 +1,8 @@
-// src/components/Header.jsx
 import React, { useEffect } from 'react';
 import '../styles/nav.css'; // Ensure the CSS file is imported
 import logo from '../img/logo.svg'; // Adjust path as needed
 
-
-const Header = () => {
+const Nav = () => {
   useEffect(() => {
     const handleScroll = () => {
       const nav = document.querySelector('nav');
@@ -27,14 +25,23 @@ const Header = () => {
         document.body.classList.add('loaded');
       }, 100);
 
-      // setTimeout(() => {
-      //   // Assuming heroSliderItems and autoSlide are defined elsewhere
-      //   const heroSliderItems = document.querySelectorAll('.hero-slider-item');
-      //   if (heroSliderItems.length > 0) {
-      //     heroSliderItems[0].classList.add('slider-item--active');
-      //     autoSlide(); // Make sure autoSlide function is defined somewhere
-      //   }
-      // }, 200);
+      // Define the autoSlide function
+      const autoSlide = () => {
+        const heroSliderItems = document.querySelectorAll('.hero-slider-item');
+        let activeIndex = 0;
+        setInterval(() => {
+          heroSliderItems[activeIndex].classList.remove('slider-item--active');
+          activeIndex = (activeIndex + 1) % heroSliderItems.length;
+          heroSliderItems[activeIndex].classList.add('slider-item--active');
+        }, 3000); // Adjust the interval as needed
+      };
+
+      // Check if heroSliderItems exist
+      const heroSliderItems = document.querySelectorAll('.hero-slider-item');
+      if (heroSliderItems.length > 0) {
+        heroSliderItems[0].classList.add('slider-item--active');
+        autoSlide();
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -81,14 +88,15 @@ const Header = () => {
               </div>
             </div>
           </div>
-          <nav className="header">
-          <img src={logo} width="160" height="50" alt="Grilli Logo" />
-          <div className="nav-items">
-              <a href="home" className="nav-item active">Home</a>
-              <a href="menu" className="nav-item">Programs</a>
-              <a href="about" className="nav-item">About Us</a>
-              <a href="chefs" className="nav-item">Specialized Courses</a>
-              <a href="contact" className="nav-item">Contact</a>
+
+          <nav className="padding-2 over-slider">
+            <img src={logo} width="160" height="50" alt="Grilli Logo" />
+            <div className="nav__items">
+              <a href="#home" className="nav-items--active">Home</a>
+              <a href="#menu">Programs</a>
+              <a href="#about">About Us</a>
+              <a href="#chefs">Specialized Courses</a>
+              <a href="#contact">Contact</a>
             </div>
             <div className="nav-right">
               <button className="btn btn-secondary" data-text="For the first time!">
@@ -109,4 +117,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Nav;
