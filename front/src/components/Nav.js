@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { IoLocationOutline, IoTimeOutline, IoCallOutline, IoMailOutline } from 'react-icons/io5'; // Import required icons
 import '../styles/nav.css'; // Ensure the CSS file is imported
 import logo from '../img/logo.svg'; // Adjust path as needed
 
@@ -67,23 +68,23 @@ const Nav = () => {
           <div className="topbar padding-2 over-slider">
             <div className="topbar-section">
               <div className="topbar__item">
-                <ion-icon name="location-outline"></ion-icon>
+                <IoLocationOutline /> {/* Location icon */}
                 <p>Elite Academy</p>
               </div>
               <div className="separator"></div>
               <div className="topbar__item">
-                <ion-icon name="time-outline"></ion-icon>
+                <IoTimeOutline /> {/* Time icon */}
                 <p>Daily: 8.00 am to 10.00 pm</p>
               </div>
             </div>
             <div className="topbar-section">
               <div className="topbar__item">
-                <ion-icon name="call-outline"></ion-icon>
+                <IoCallOutline /> {/* Call icon */}
                 <p>+126 54 215 210</p>
               </div>
               <div className="separator"></div>
               <div className="topbar__item">
-                <ion-icon name="mail-outline"></ion-icon>
+                <IoMailOutline /> {/* Mail icon */}
                 <p>booking@Academy.com</p>
               </div>
             </div>
@@ -100,7 +101,7 @@ const Nav = () => {
             </div>
             <div className="nav-right">
               <button className="btn btn-secondary" data-text="For the first time!">
-                <span>Sign up Free</span>
+                <span>Sign up</span>
               </button>
               <button className="btn btn-secondary" data-text="I have an account">
                 <span>Log in</span>

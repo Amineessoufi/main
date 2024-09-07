@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { IoChevronBackOutline, IoChevronForwardOutline, IoCaretUpOutline } from 'react-icons/io5'; // Import arrow icons
+
 import '../styles/nav.css'; // Ensure you have the styles needed for your component
 import heroSlider1 from '../img/hero-slider-1.jpg'; // Import images
 import heroSlider2 from '../img/hero-slider-2.jpg';
@@ -59,10 +61,10 @@ const Header = () => {
     <>
       <header className="padding-5">
         <div className="slider-control slider-prev over-slider" onClick={slidePrev}>
-          <ion-icon name="chevron-back-outline"></ion-icon>
+          <IoChevronBackOutline /> {/* Replaced ion-icon with React Icon */}
         </div>
         <div className="slider-control slider-next over-slider" onClick={slideNext}>
-          <ion-icon name="chevron-forward-outline"></ion-icon>
+          <IoChevronForwardOutline /> {/* Replaced ion-icon with React Icon */}
         </div>
 
         {heroSliderItems.map((item, index) => (
@@ -87,7 +89,7 @@ const Header = () => {
       </div>
 
       <div className="back-top" title="Go to top">
-        <ion-icon name="caret-up-outline"></ion-icon>
+        <IoCaretUpOutline /> {/* Replaced ion-icon with React Icon */}
       </div>
     </>
   );
